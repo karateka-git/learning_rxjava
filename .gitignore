@@ -28,3 +28,22 @@ out/
 *.iml
 *.ipr
 *.iws
+
+out
+
+# IDEA
+.idea
+*.iml
+local.properties
+
+# Gradle
+.gradle
+gradle/
+build
+build.gradle
+gradle.properties
+gradlew
+gradlew.bat
+
+lib
+
