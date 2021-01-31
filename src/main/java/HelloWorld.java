@@ -1,6 +1,7 @@
-import io.reactivex.Flowable;
+import io.reactivex.Observable;
+
 public class HelloWorld {
     public static void hello() {
-        Flowable.just("Hello World!").subscribe(System.out::println);
+        Observable.just("Hello World!").subscribe(System.out::println);
     }
 }
