@@ -2,6 +2,10 @@ import io.reactivex.Observable;
 
 public class HelloWorld {
     public static void hello() {
-        Observable.just("Hello World!").subscribe(System.out::println);
+        Observable.just("Hello World!").subscribe(
+                System.out::println,
+                System.out::println,
+                System.out::println
+        ).dispose();
     }
 }
