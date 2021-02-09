@@ -1,6 +1,6 @@
 import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class RxOperators {
@@ -13,12 +13,21 @@ public class RxOperators {
     }
 
     public static void operatorsFlatMap() {
+        // fromIterable - from [1,2,3,4] to Observable(1) .. Observable(4)
+        Observable.just(List.of(1,2,3,4)).flatMap(integers -> Observable.fromIterable(integers))
+                .subscribe(System.out::println);
     }
 
     public static void operatorsConcatMap() {
+        // It guarantees the order of the observables
+        Observable.just(List.of(1,2,3,4)).concatMap(integers -> Observable.fromIterable(integers))
+                .subscribe(System.out::println);
     }
 
     public static void operatorsSwitchMap() {
+        // It always returns the latest Observable and emits the items from it
+        Observable.just(List.of(1,2,3,4)).switchMap(integers -> Observable.fromIterable(integers))
+                .subscribe(System.out::println);
     }
 
     public static void operatorsConcat() {
